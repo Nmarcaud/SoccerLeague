@@ -26,55 +26,32 @@ with open('soccer_players.csv') as csvfile:
 
 
 # répartir les bons et les moins bons dans les teams
-shark_count = 0
-dragon_count = 0
-raptor_count = 0
 
 for player in player_hight_xp:
-    if shark_count < 3:
-        if player in Sharks or player in Dragons or player in Raptors:
-            continue
-        else:
+    while player in Sharks or player in Dragons or player in Raptors:
+        continue
+    else:
+        if len(Sharks) < 3:
             Sharks.append(player)
-            shark_count += 1
-            continue
-    elif dragon_count < 3:
-        if player in Sharks or player in Dragons or player in Raptors:
-            continue
-        else:
+            
+        elif len(Dragons) < 3:
             Dragons.append(player)
-            dragon_count += 1
-            continue
-    elif raptor_count < 3:
-        if player in Sharks or player in Dragons or player in Raptors:
-            continue
+            
         else:
             Raptors.append(player)
-            raptor_count += 1
-            continue
         
 for player in player_low_xp:
-    if shark_count < 6:
-        if player in Sharks or player in Dragons or player in Raptors:
-            continue
-        else:
+    while player in Sharks or player in Dragons or player in Raptors:
+        continue
+    else:
+        if len(Sharks) < 6:
             Sharks.append(player)
-            shark_count += 1
-            continue
-    elif dragon_count < 6:
-        if player in Sharks or player in Dragons or player in Raptors:
-            continue
-        else:
+
+        elif len(Dragons) < 6:          
             Dragons.append(player)
-            dragon_count += 1
-            continue
-    elif raptor_count < 6:
-        if player in Sharks or player in Dragons or player in Raptors:
-            continue
+            
         else:
             Raptors.append(player)
-            raptor_count += 1
-            continue
 
 # ok exporter en fichier texte
 
@@ -85,13 +62,13 @@ for player in Sharks:
 print('')
 
 print('Dragons')
-for player in Sharks:
+for player in Dragons:
     print(', '.join([player['Name'], player['Soccer Experience'], player['Guardian Name(s)']]))
     
 print('')
 
 print('Raptors')
-for player in Sharks:
+for player in Raptors:
     print(', '.join([player['Name'], player['Soccer Experience'], player['Guardian Name(s)']]))
     
 print('')
