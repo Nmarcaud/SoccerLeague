@@ -53,27 +53,26 @@ for player in player_low_xp:
         else:
             Raptors.append(player)
 
-# ok exporter en fichier texte
-
-print('Sharks')
-for player in Sharks:
-    print(', '.join([player['Name'], player['Soccer Experience'], player['Guardian Name(s)']]))
-    
-print('')
-
-print('Dragons')
-for player in Dragons:
-    print(', '.join([player['Name'], player['Soccer Experience'], player['Guardian Name(s)']]))
-    
-print('')
-
-print('Raptors')
-for player in Raptors:
-    print(', '.join([player['Name'], player['Soccer Experience'], player['Guardian Name(s)']]))
-    
-print('')
-    
-
-
-    
 # exportation dans un fichier txt
+results = open("teams.txt", "w")
+
+results.write('Sharks\n')
+for player in Sharks:
+    results.write(', '.join([player['Name'], player['Soccer Experience'], player['Guardian Name(s)']]))
+    results.write('\n')
+results.write('\n')
+
+results.write('Dragons\n')
+for player in Dragons:
+    results.write(', '.join([player['Name'], player['Soccer Experience'], player['Guardian Name(s)']]))       
+    results.write('\n')
+results.write('\n')
+
+results.write('Raptors\n')
+for player in Raptors:
+    results.write(', '.join([player['Name'], player['Soccer Experience'], player['Guardian Name(s)']]))       
+    results.write('\n')
+results.write('\n')
+
+results = open("teams.txt", "r")
+
