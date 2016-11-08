@@ -7,7 +7,7 @@ Dragons = []
 Raptors = []
 
 # (main)
-def program():
+def main():
     
     # Importation
     with open('soccer_players.csv') as csvfile:
@@ -66,7 +66,6 @@ def program():
 
     results = open("teams.txt", "r")
 
-# eviter l'importation auto (se lance à la commande program() )
-if __name__ == '__program__':
-    program()
-
+# eviter l'importation auto (se lance à la commande main() )
+if __name__ == '__main__':
+    main()
